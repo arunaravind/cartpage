@@ -1,0 +1,159 @@
+/* Header styles begins */
+header {
+    background-color: $base-blue;
+    padding: 10px 0;
+    .logo-holder {
+        padding: 8px 0 0 0;
+        img {
+            height: auto;
+            max-width: 80px;
+        }
+    }
+    .main-menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .main-menu--link {
+            position: relative;
+            padding: 0 2px;
+            &.link {
+                color: #fff;
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            img {
+                width: 44px;
+                height: auto;
+            }
+            &::before {
+                background: rgba(211, 211, 211, 0.5);
+                content: "";
+                height: 20px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+            }
+            &:last-child {
+                &::before {
+                    display: none;
+                }
+            }
+            
+            &:hover {
+                background: lighten($color: $base-blue, $amount: 2%);
+                border-radius: 2px;
+            }
+        }
+    }
+}
+
+#cartProgress {
+    padding: 80px 0  60px;
+    .progress-meter {
+        ul.progress-points {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            text-align: center;
+            transform: translateX(50px);
+            .progress-point {
+                width: calc((100%/2) - 56px);
+                position: relative;
+                span.label {
+                    position: relative;
+                    left: -45%;
+                    text-transform: uppercase;   
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #e9e5e5;         
+                }
+                .place-progress {
+                    background-color: #e9e5e5;
+                    height: 26px;
+                    position: relative;
+                    width: 26px;
+                    left: -6px;
+                    border: 4px solid #FFF;
+                    bottom: 12px;
+                    border-radius: 50px;
+                    &::before {
+                        position: absolute;
+                        border-radius: 50px;
+                        content: "";
+                        height: 12px;
+                        width: 12px;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: #333;
+                        opacity: 0;
+                    }
+                }
+                &::before {
+                    background-color: #ddd;
+                    content: "";
+                    height: 2px;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                }
+                &::after {
+                    background-color: #333;
+                    content: "";
+                    height: 2px;
+                    position: absolute;
+                    width: 0%;
+                    left: 20px;
+                    top: 0;
+                    transition: width 2s;
+                }
+                &:last-child {
+                    width: auto !important;
+                    &::before, &::after {
+                        display: none
+                    }
+                    .label {
+                        display: block;
+                        width: 120px;
+                    }
+                }
+                &.active {
+                    &::after {
+                        width: 100%;
+                        animation: widthAnim 2s;
+                    }
+                    .label {
+                        color: #6e6c6c;
+                    }
+                    .place-progress {
+                        background: #FFF;
+                        &::before {
+                            opacity: 1;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            height: 24px;
+                            width: 24px;
+                            left: -3px;
+                            border: 2px solid #333;
+                            border-radius: 50px;
+                            bottom: -3px;
+                        }
+                    }
+                    &::before {
+                        //background-color: #333;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes widthAnim {
+    0%   { width: 0%; }
+    100% { width: 100%; }
+  }
+/* Header styles ends */

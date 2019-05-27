@@ -1,0 +1,22 @@
+{
+  "name": "gale_sass_pack",
+  "version": "1.0.0",
+  "description": "gale_cart_page sass workflow",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "sass"
+  ],
+  "author": "Arun",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-sass": "^3.2.1"
+  },
+  "devDependencies": {}
+}
